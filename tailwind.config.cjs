@@ -17,7 +17,8 @@ module.exports = {
           'gray-800': '#202024',
           'gray-900': '#121214',
           'green-300': '#00b37e',
-          'green-500': '#00875f'
+          'green-500': '#00875f',
+          'red-500': '#f75a68'
         }
       },
       fontFamily: {

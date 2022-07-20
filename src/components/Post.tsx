@@ -1,3 +1,5 @@
+import { Comment } from './Comment'
+
 interface PostProps {
   author: string
   content: string
@@ -79,6 +81,12 @@ export function Post({ author, content }: PostProps) {
           </button>
         </footer>
       </form>
+
+      <div className="mt-8">
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
     </article>
   )
 }
