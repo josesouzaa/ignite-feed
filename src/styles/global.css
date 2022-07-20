@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  :focus {
+    @apply outline-none ring-2 ring-brand-green-500 ring-offset-1 ring-offset-brand-gray-800;
+  }
   body {
     @apply bg-brand-gray-900 text-brand-gray-300 antialiased;
   }
