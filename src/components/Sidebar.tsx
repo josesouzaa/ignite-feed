@@ -1,4 +1,5 @@
 import { PencilLine } from 'phosphor-react'
+import { Avatar } from './Avatar'
 
 export function Sidebar() {
   return (
@@ -9,10 +10,7 @@ export function Sidebar() {
       />
 
       <div className="flex flex-col items-center mt-[calc(0px-1.5rem-6px)]">
-        <img
-          className="w-12 h-12 rounded-lg border-4 border-brand-gray-800 ring-2 ring-brand-green-500 box-content"
-          src="https://github.com/josesouzaa.png"
-        />
+        <Avatar hasBorder />
 
         <strong className="mt-4 text-brand-gray-100 leading-[1.6]">
           José de Souza

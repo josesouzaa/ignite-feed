@@ -1,3 +1,4 @@
+import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 
 interface PostProps {
@@ -10,10 +11,7 @@ export function Post({ author, content }: PostProps) {
     <article className="bg-brand-gray-800 rounded-lg p-10 first-of-type:mt-0 mt-8">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <img
-            className="w-12 h-12 rounded-lg border-4 border-brand-gray-800 ring-2 ring-brand-green-500 box-content"
-            src="https://github.com/josesouzaa.png"
-          />
+          <Avatar hasBorder />
 
           <div className="flex flex-col">
             <strong className="text-brand-gray-100 leading-[1.6]">
