@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { Avatar } from './Avatar'
 
 import { ThumbsUp, Trash } from 'phosphor-react'
@@ -8,6 +10,8 @@ interface CommentProps {
 }
 
 export function Comment({ content, onDeleteComment }: CommentProps) {
+  const [likeCount, setLikeCount] = useState(0)
+
   return (
     <div className="mt-6 flex gap-4">
       <Avatar />
@@ -40,10 +44,13 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
         </div>
 
         <footer className="mt-4">
-          <button className="text-brand-gray-400 flex items-center hover:text-brand-green-300 transition rounded-sm">
+          <button
+            className="text-brand-gray-400 flex items-center hover:text-brand-green-300 transition rounded-sm"
+            onClick={() => setLikeCount((prev) => prev + 1)}
+          >
             <ThumbsUp className="mr-2" /> Aplaudir{' '}
             <span className="before:content-['\2022'] before:py-0 before:px-1">
-              20
+              {likeCount}
             </span>
           </button>
         </footer>
