@@ -2,7 +2,21 @@ import { Header } from './components/Header'
 import { Post } from './components/Post'
 import { Sidebar } from './components/Sidebar'
 
-const posts = [
+interface Post {
+  id: number
+  author: {
+    avatarUrl: string
+    name: string
+    role: string
+  }
+  content: {
+    type: 'paragraph' | 'link'
+    content: string
+  }[]
+  publishedAt: Date
+}
+
+const posts: Post[] = [
   {
     id: 1,
     author: {
@@ -59,7 +73,6 @@ export function App() {
           {posts.map((post) => (
             <Post
               key={post.id}
-              id={post.id}
               author={post.author}
               content={post.content}
               publishedAt={post.publishedAt}

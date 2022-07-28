@@ -1,11 +1,15 @@
-interface AvatarProps {
-  src?: string
+import { ImgHTMLAttributes } from 'react'
+
+interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   hasBorder?: boolean
 }
 
 export function Avatar({
   src = 'https://github.com/josesouzaa.png',
-  hasBorder = false
+  alt = 'José de Souza',
+  title = 'José de Souza',
+  hasBorder = false,
+  ...props
 }: AvatarProps) {
   return (
     <img
@@ -15,6 +19,9 @@ export function Avatar({
           : ''
       } `}
       src={src}
+      alt={alt}
+      title={title}
+      {...props}
     />
   )
 }

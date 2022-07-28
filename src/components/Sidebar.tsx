@@ -10,7 +10,7 @@ export function Sidebar() {
       />
 
       <div className="flex flex-col items-center mt-[calc(0px-1.5rem-6px)]">
-        <Avatar hasBorder />
+        <Avatar hasBorder alt="José de Souza" />
 
         <strong className="mt-4 text-brand-gray-100 leading-[1.6]">
           José de Souza

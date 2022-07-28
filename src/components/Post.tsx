@@ -7,20 +7,19 @@ import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
 interface PostProps {
-  id: number
   author: {
     avatarUrl: string
     name: string
     role: string
   }
   content: {
-    type: string
+    type: 'paragraph' | 'link'
     content: string
   }[]
   publishedAt: Date
 }
 
-export function Post({ id, author, content, publishedAt }: PostProps) {
+export function Post({ author, content, publishedAt }: PostProps) {
   const [comments, setComments] = useState(['Post muito legal!'])
   const [newCommentText, setNewCommentText] = useState('')
 
@@ -55,7 +54,7 @@ export function Post({ id, author, content, publishedAt }: PostProps) {
     <article className="bg-brand-gray-800 rounded-lg p-10 first-of-type:mt-0 mt-8">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Avatar hasBorder src={author.avatarUrl} />
+          <Avatar hasBorder src={author.avatarUrl} alt={author.name} />
 
           <div className="flex flex-col">
             <strong className="text-brand-gray-100 leading-[1.6]">
